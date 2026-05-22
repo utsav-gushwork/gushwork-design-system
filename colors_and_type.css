@@ -1,0 +1,208 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Gushwork Design System — colors, type, spacing, radii, shadows.
+   All values pulled directly from the Figma source of truth
+   (Core-Components/Color-System, Typography-System, Spacing-System,
+   Radius-System, Effect-System). Use the tokens here — not raw values.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Font faces ────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Vert Grotesk Display";
+  src: url("./fonts/VertGroteskDisplay-VF.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — body / UI typeface. Loaded from Google Fonts because no local
+   .ttf was supplied. Match weights in design: 400, 500, 600, 700. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ── Color: Primary (Blue) ─────────────────────────────────────────── */
+  --gw-primary-50:  #e5f1ff;
+  --gw-primary-100: #cce2ff;
+  --gw-primary-200: #99c6ff;
+  --gw-primary-300: #66a9ff;
+  --gw-primary-400: #338dff;
+  --gw-primary-500: #0070ff; /* Primary brand blue */
+  --gw-primary-600: #0061e0; /* Default button blue (pressed/hover) */
+  --gw-primary-700: #005cd1;
+  --gw-primary-800: #0048a3;
+  --gw-primary-900: #003475;
+
+  /* ── Color: Neutral ────────────────────────────────────────────────── */
+  --gw-white:     #ffffff;
+  --gw-neutral-25:  #fafbfb;
+  --gw-neutral-50:  #f7f8f9; /* Background subtle */
+  --gw-neutral-100: #f1f2f3;
+  --gw-neutral-200: #e1e3e8; /* Default border */
+  --gw-neutral-300: #cfd1d4;
+  --gw-neutral-400: #bbbec4;
+  --gw-neutral-500: #959ba4; /* Muted text */
+  --gw-neutral-600: #6a7077; /* Secondary text */
+  --gw-neutral-700: #535a61; /* Tertiary text */
+  --gw-neutral-800: #4d545c;
+  --gw-neutral-900: #262a2e; /* Strong text */
+  --gw-black:     #0d0d0d; /* Primary text — pure brand black */
+
+  --gw-ink-overlay-10: rgba(1, 1, 9, 0.10); /* Soft border on white */
+  --gw-ink-overlay-50: rgba(1, 1, 9, 0.50);
+  --gw-white-overlay-10: rgba(255, 255, 255, 0.10);
+  --gw-white-overlay-30: rgba(255, 255, 255, 0.30);
+  --gw-white-overlay-40: rgba(255, 255, 255, 0.40);
+
+  /* ── Color: Tertiary (Slate, used in marketing surfaces) ───────────── */
+  --gw-tertiary-50:  #ffffff;
+  --gw-tertiary-200: #617dba;
+  --gw-tertiary-300: #3f5990;
+  --gw-tertiary-400: #28385c;
+  --gw-tertiary-500: #111827; /* Strong slate — heading on light */
+
+  /* ── Color: Semantic ───────────────────────────────────────────────── */
+  --gw-success: #1fc16b;
+  --gw-success-bg: #e6f8ef;
+  --gw-warning: #ffdb43;
+  --gw-warning-strong: #dfb400;
+  --gw-warning-bg: #fff8d6;
+  --gw-error:   #fb3748;
+  --gw-error-strong: #d00416;
+  --gw-error-bg: #ffebed;
+
+  /* ── Semantic surface / text tokens ────────────────────────────────── */
+  --gw-bg:           var(--gw-white);
+  --gw-bg-subtle:    var(--gw-neutral-50);
+  --gw-bg-muted:     var(--gw-neutral-100);
+  --gw-bg-inverse:   var(--gw-black);
+  --gw-bg-brand:     var(--gw-primary-500);
+  --gw-bg-brand-strong: var(--gw-primary-600);
+
+  --gw-fg-1:         var(--gw-black);        /* Primary text */
+  --gw-fg-2:         var(--gw-neutral-700);  /* Body text */
+  --gw-fg-3:         var(--gw-neutral-600);  /* Secondary */
+  --gw-fg-muted:     var(--gw-neutral-500);  /* Captions, placeholders */
+  --gw-fg-inverse:   var(--gw-white);
+  --gw-fg-brand:     var(--gw-primary-500);
+  --gw-fg-link:      var(--gw-primary-600);
+
+  --gw-border:       var(--gw-neutral-200);  /* Default UI border */
+  --gw-border-strong: var(--gw-ink-overlay-10);
+  --gw-border-subtle: var(--gw-neutral-100);
+
+  /* ── Typography ────────────────────────────────────────────────────── */
+  --gw-font-display: "Vert Grotesk Display", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --gw-font-body:    "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --gw-font-mono:    "JetBrains Mono", "Roboto Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Display / Heading scale (uses --gw-font-display) */
+  --gw-h1-size: 60px;  --gw-h1-lh: 1.1;  --gw-h1-weight: 700;
+  --gw-h2-size: 56px;  --gw-h2-lh: 1.15; --gw-h2-weight: 700;
+  --gw-h3-size: 44px;  --gw-h3-lh: 1.2;  --gw-h3-weight: 700;
+  --gw-h4-size: 38px;  --gw-h4-lh: 1.2;  --gw-h4-weight: 600;
+  --gw-h5-size: 32px;  --gw-h5-lh: 1.2;  --gw-h5-weight: 600;
+  --gw-h6-size: 26px;  --gw-h6-lh: 1.2;  --gw-h6-weight: 500;
+  --gw-h7-size: 22px;  --gw-h7-lh: 1.4;  --gw-h7-weight: 500;
+
+  /* Body scale (uses --gw-font-body, line-height 160% by default) */
+  --gw-body-22: 22px; --gw-body-20: 20px; --gw-body-18: 18px;
+  --gw-body-16: 16px; --gw-body-14: 14px; --gw-body-12: 12px;
+  --gw-body-10: 10px;
+  --gw-body-lh-comfortable: 1.6;
+  --gw-body-lh-tight: 1.4;
+  --gw-letter-spacing-tight: -0.016em;   /* large headings */
+  --gw-letter-spacing-normal: -0.006em;  /* body 14/16 */
+  --gw-letter-spacing-loose: -0.002em;   /* body 18+ */
+
+  /* ── Spacing scale ─────────────────────────────────────────────────── */
+  --gw-space-1: 4px;
+  --gw-space-2: 8px;
+  --gw-space-3: 12px;
+  --gw-space-4: 16px;
+  --gw-space-5: 20px;
+  --gw-space-6: 24px;
+  --gw-space-7: 32px;
+  --gw-space-8: 40px;
+  --gw-space-9: 48px;
+  --gw-space-10: 56px;
+  --gw-space-11: 60px;
+  --gw-space-12: 80px;
+  --gw-space-13: 100px;
+  --gw-space-14: 120px;
+  --gw-space-15: 160px;
+
+  /* ── Radius scale ──────────────────────────────────────────────────── */
+  --gw-radius-1: 2px;
+  --gw-radius-2: 4px;
+  --gw-radius-3: 6px;
+  --gw-radius-4: 8px;
+  --gw-radius-5: 10px;    /* Button regular (44) */
+  --gw-radius-6: 12px;    /* Button large (52) */
+  --gw-radius-7: 16px;    /* Inset card image */
+  --gw-radius-8: 24px;    /* Card */
+  --gw-radius-9: 32px;
+  --gw-radius-10: 40px;   /* Section / canvas */
+  --gw-radius-11: 80px;
+  --gw-radius-12: 120px;
+  --gw-radius-full: 999px;
+
+  /* Fold stacking — every top-level <section> after the first carries
+     border-top-left-radius / border-top-right-radius of this value, and a
+     negative top margin of the same magnitude, to create the signature
+     "card stack" reveal between marketing folds. */
+  --gw-fold-radius: 20px;
+
+  /* Card hover — asymmetric tell. Pillar/agent cards adopt this radius
+     on hover so the bottom-right corner relaxes. Used as a single rule:
+     `border-radius: var(--gw-radius-card-hover)`. */
+  --gw-radius-card-hover: 24px 24px 60px 24px;
+
+  /* ── Elevation / shadows ───────────────────────────────────────────── */
+  --gw-shadow-s1: 0 1px 2px rgba(10, 13, 20, 0.03);
+  --gw-shadow-s2: 0 3px 50px rgba(0, 0, 0, 0.07);                   /* Card */
+  --gw-shadow-s3: 0 16px 32px -12px rgba(88, 92, 95, 0.10);          /* Hover */
+  --gw-shadow-s4: 0 24px 64px -16px rgba(0, 0, 0, 0.18);             /* Modal */
+  --gw-shadow-focus: 0 0 0 4px rgb(241, 241, 243), 0 0 0 2px rgb(255, 255, 255);
+  --gw-shadow-focus-blue: 0 0 0 4px rgba(0, 112, 255, 0.18);
+
+  /* ── Motion ────────────────────────────────────────────────────────── */
+  --gw-ease: cubic-bezier(0.22, 1, 0.36, 1);   /* gentle out-curve */
+  --gw-ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --gw-dur-fast: 120ms;
+  --gw-dur-base: 200ms;
+  --gw-dur-slow: 320ms;
+}
+
+/* ── Element-level defaults ──────────────────────────────────────────── */
+body {
+  font-family: var(--gw-font-body);
+  color: var(--gw-fg-1);
+  background: var(--gw-bg);
+  font-size: var(--gw-body-16);
+  line-height: var(--gw-body-lh-comfortable);
+  letter-spacing: var(--gw-letter-spacing-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--gw-font-display); color: var(--gw-fg-1); margin: 0; text-wrap: balance; }
+h1 { font-size: var(--gw-h1-size); line-height: var(--gw-h1-lh); font-weight: var(--gw-h1-weight); letter-spacing: var(--gw-letter-spacing-tight); }
+h2 { font-size: var(--gw-h2-size); line-height: var(--gw-h2-lh); font-weight: var(--gw-h2-weight); letter-spacing: var(--gw-letter-spacing-tight); }
+h3 { font-size: var(--gw-h3-size); line-height: var(--gw-h3-lh); font-weight: var(--gw-h3-weight); letter-spacing: var(--gw-letter-spacing-tight); }
+h4 { font-size: var(--gw-h4-size); line-height: var(--gw-h4-lh); font-weight: var(--gw-h4-weight); }
+h5 { font-size: var(--gw-h5-size); line-height: var(--gw-h5-lh); font-weight: var(--gw-h5-weight); }
+h6 { font-size: var(--gw-h6-size); line-height: var(--gw-h6-lh); font-weight: var(--gw-h6-weight); }
+
+p { margin: 0; text-wrap: pretty; }
+small { font-size: var(--gw-body-12); color: var(--gw-fg-3); }
+
+/* Useful utility classes */
+.gw-mono { font-family: var(--gw-font-mono); }
+.gw-eyebrow {
+  font-family: var(--gw-font-body);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gw-fg-2);
+}
